@@ -1,12 +1,12 @@
 ## 🖼️ Architecture Overview
 
-![Architecture Diagram](./assets/sweet-shop-architecture.png)
+![Architecture Diagram](./src/assets/sweet-shop-architecture.jpg)
 
 ---
 
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/sweet-shop.git
+git clone
 cd sweet-shop
 npm install
