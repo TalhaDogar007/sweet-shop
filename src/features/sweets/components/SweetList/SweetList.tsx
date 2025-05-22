@@ -1,26 +1,29 @@
 import SweetCard from "../SweetCard/SweetCard"
-import { data } from '../../services/sweetApi'
 import styles from './SweetList.module.scss';
 
-type SweetListProp = {
-    searchTerm: string;
-}
+type Sweet = {
+    name: string;
+    price: number;
+    url: string;
+};
 
-const SweetList = ({ searchTerm }: SweetListProp) => {
+type SweetListProps = {
+    sweets: Sweet[];
+};
 
-    const filteredData = data.filter(sweet =>
-        sweet.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+const SweetList = ({ sweets }: SweetListProps) => {
 
-    return (
-        <div className={styles.sweet_list_container}>
-            {filteredData.map(sweet =>
-                (<SweetCard sweet={sweet} />)
-            )}
+
+    return <>
+        <div>
+            <h1 className={styles.title}>Town's Best Sweet Shop 🍬</h1>
+            <div className={styles.sweet_list_container} data-testid="sweet_list_container">
+                {sweets.map(sweet =>
+                    (<SweetCard sweet={sweet} />)
+                )}
+            </div>
         </div>
-
-
-    )
+    </>
 };
 
 export default SweetList;
