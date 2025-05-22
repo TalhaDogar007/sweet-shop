@@ -10,3 +10,6 @@
 git clone
 cd sweet-shop
 npm install
+
+npm run test
+npm run coverage
